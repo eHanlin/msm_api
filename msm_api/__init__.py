@@ -1,3 +1,3 @@
 
-from memory_session_api import MemorySessionAPI
+from .memory_session_api import MemorySessionAPI
 
