@@ -5,7 +5,7 @@ except:
     from distutils.core import setup, find_packages
  
 setup(name='msm_api',
-      version='1.3',
+      version='1.4',
       description='',
       author='',
       author_email='',

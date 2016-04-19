@@ -4,6 +4,7 @@ import pylibmc
 from msm_transcoder import Transcoder
 import time
 import uuid
+import sys
 
 class MemorySessionAPI( object ):
 
@@ -44,18 +45,20 @@ class MemorySessionAPI( object ):
 
             bin_session = base64.b64decode( b64_session )
 
-            buffers = map( ord, bin_session )
+            if sys.version_info[0] > 2: bin_session = bin_session.decode('iso-8859-1')
 
-            data = self.__transcoder.deserialize( list( buffers ) )
+            buffers = list( map( ord, bin_session ))
+
+            data = self.__transcoder.deserialize( buffers )
 
 
         else:
 
             data = self.create_session_data()
 
-            bin_data = ''.join( map( chr, self.__transcoder.serialize( data ) ) ) 
+            #bin_data = ''.join( map( chr, self.__transcoder.serialize( data ) ) ) 
 
-            output = base64.b64encode( bin_data )
+            #output = base64.b64encode( bin_data )
 
         return data
 
@@ -71,7 +74,9 @@ class MemorySessionAPI( object ):
 
          data["principalData"] = user_data
 
-         bin_data = ''.join( map( chr, self.__transcoder.serialize( data ) ) ) 
+         bin_data = ''.join( map( chr, self.__transcoder.serialize( data ) ) )
+
+         if sys.version_info[0] > 2: bin_data = bin_data.encode('iso-8859-1')
 
          output = base64.b64encode( bin_data )
 
