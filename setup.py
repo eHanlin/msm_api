@@ -11,5 +11,6 @@ setup(name='msm_api',
       author_email='',
       url='',
       packages=find_packages(),
+      install_requires=['pylibmc', 'msm-transcoder']
      )   
 
