@@ -6,10 +6,10 @@ except:
  
 setup(name='msm_api',
       version='1.4',
-      description='',
-      author='',
-      author_email='',
-      url='',
+      description='Use base64 encoder on memcached server.',
+      author='Sparrow Jang',
+      author_email='sparrow.jang@gmail.com',
+      url='https://github.com/eHanlin/msm_api',
       packages=find_packages(),
       install_requires=['pylibmc', 'msm-transcoder']
      )   
