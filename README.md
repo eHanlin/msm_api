@@ -1,6 +1,12 @@
 msm-api
 =============
 
+Use base64 encoder on **memcached server**.
+
+You able to see [https://github.com/eHanlin/memcached-session-manager/tree/1.8.3-base64](https://github.com/eHanlin/memcached-session-manager/tree/1.8.3-base64) project.
+
+And python project with java project uses the same **memcached server** to share session.
+
 ## Dependency
 
 * pylibmc
