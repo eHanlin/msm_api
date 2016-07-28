@@ -10,7 +10,7 @@ And python project with java project uses the same **memcached server** to share
 ## Dependency
 
 * pylibmc
-* msm-transcoder
+* [msm-transcoder](https://github.com/eHanlin/msm-transcoder-python)
 
 ## Install
 
